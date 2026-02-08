@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitAI Pro | Virtual Trainer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="dashboard">
+            <div class="video-container">
+                <video class="input_video" style="display:none;"></video>
+                <canvas class="output_canvas"></canvas>
+                <div id="status-label" class="status-overlay">Camera Off</div>
+            </div>
+
+            <div class="controls-panel">
+                <h1>Fit<span>AI</span></h1>
+                
+                <div class="exercise-card">
+                    <label>Workout Type</label>
+                    <select id="exercise-type">
+                        <option value="pushups">Pushups (Arms)</option>
+                        <option value="squats">Squats (Legs)</option>
+                        <option value="curls">Bicep Curls (Arms)</option>
+                        <option value="lunges">Lunges (Legs)</option>
+                    </select>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Reps</span>
+                        <span id="counter">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time</span>
+                        <span id="timer">00:00</span>
+                    </div>
+                </div>
+
+                <div class="form-feedback">
+                    <span class="stat-label">Current State</span>
+                    <div id="stage">READY</div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="start-btn" class="btn-start">START</button>
+                    <button id="stop-btn" class="btn-stop">STOP CAMERA</button>
+                    <button id="reset-btn" class="btn-reset">RESTART ALL</button>
+                </div>
+
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
